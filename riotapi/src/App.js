@@ -85,10 +85,10 @@ function App() {
 
       {/* Display stats */}
       <div>
-        <p className="golden">Kills:</p><p>{stats.kills}</p>
-        <p className="golden">Deaths:</p><p>{stats.deaths}</p>
-        <p className="golden">Assists: </p><p>{stats.assists}</p>
-        <p className="golden">Gold Earned: </p><p>{stats.goldEarned}</p>
+      <div className='stat'><p className="golden">Kills:</p><p>{stats.kills}</p></div>
+      <div className='stat'><p className="golden">Deaths:</p><p>{stats.deaths}</p></div>
+      <div className='stat'><p className="golden">Assists: </p><p>{stats.assists}</p></div>
+      <div className='stat'><p className="golden">Gold Earned: </p><p>{stats.goldEarned}</p></div>
       </div>
       </div>
     </div>

@@ -13,17 +13,28 @@
   font-weight: 600;
 }
 
+.stat {
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+}
+
+.stat > p {
+  padding-inline: 0.3rem;
+  color: goldenrod;
+}
+
 .golden {
   font-size:1.3rem;
 }
 
 .content * { 
-  margin-top:1.5rem;
+  margin-top:0.5rem;
 }
 
 .stats {
   background: rgba(0, 0, 0, 0.7);
-  padding: 8rem; 
+  padding: 6rem; 
   
 }
 
