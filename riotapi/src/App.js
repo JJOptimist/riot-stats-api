@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import axiosInstance from './axiosInstance';
 import SummonerForm from './SummonerForm';
 import MatchList from './MatchList';
 import MatchDetails from './MatchDetails';
 
-const API_KEY = 'YOUR_API_KEY';
-const API_BASE_URL = 'https://na1.api.riotgames.com/lol';
+const API_KEY = 'RGAPI-4278be8f-4e24-4ea3-bc98-2528230da0f5'; 
+const API_BASE_URL = 'https://eun1.api.riotgames.com/lol';
+
 
 function App() {
   const [summoner, setSummoner] = useState(null);
@@ -15,16 +16,19 @@ function App() {
   const searchSummoner = async (summonerName) => {
     try {
       // Step 1: Retrieve Summoner Information
-      const summonerResponse = await axios.get(
-        `${API_BASE_URL}/summoner/v4/summoners/by-name/${summonerName}?api_key=${API_KEY}`
+      const summonerResponse = await axiosInstance.get(
+        `/summoner/v4/summoners/by-name/${summonerName}?api_key=${API_KEY}`
+        
       );
+      console.log("Probao ovde");
 
       const summonerData = summonerResponse.data;
+      console.log(summonerData);
       setSummoner(summonerData);
 
       // Step 2: Retrieve Match IDs
-      const matchIdsResponse = await axios.get(
-        `${API_BASE_URL}/match/v5/matches/by-puuid/${summonerData.puuid}/ids?api_key=${API_KEY}&count=10`
+      const matchIdsResponse = await axiosInstance.get(
+        `/match/v5/matches/by-puuid/${summonerData.puuid}/ids?api_key=${API_KEY}&count=10`
       );
 
       const matchIdsData = matchIdsResponse.data;
@@ -37,8 +41,8 @@ function App() {
   const selectMatch = async (matchId) => {
     // Fetch additional details for the selected match
     try {
-      const matchDetailsResponse = await axios.get(
-        `${API_BASE_URL}/match/v5/matches/${matchId}?api_key=${API_KEY}`
+      const matchDetailsResponse = await axiosInstance.get(
+        `/match/v5/matches/${matchId}?api_key=${API_KEY}`
       );
 
       const matchDetailsData = matchDetailsResponse.data;
