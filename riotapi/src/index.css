@@ -9,6 +9,16 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+
+.golden {
+  font-size:1.3rem;
+}
+
+.content * { 
+  margin-top:1.5rem;
 }
 
 .stats {

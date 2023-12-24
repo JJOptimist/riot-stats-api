@@ -5,6 +5,8 @@ import SummonerForm from './SummonerForm';
 import MatchList from './MatchList';
 import MatchDetails from './MatchDetails';
 
+
+
 function App() {
   const [summoner, setSummoner] = useState(null);
   const [matches, setMatches] = useState([]);
@@ -83,10 +85,10 @@ function App() {
 
       {/* Display stats */}
       <div>
-        <p>Kills: {stats.kills}</p>
-        <p>Deaths: {stats.deaths}</p>
-        <p>Assists: {stats.assists}</p>
-        <p>Gold Earned: {stats.goldEarned}</p>
+        <p className="golden">Kills:</p><p>{stats.kills}</p>
+        <p className="golden">Deaths:</p><p>{stats.deaths}</p>
+        <p className="golden">Assists: </p><p>{stats.assists}</p>
+        <p className="golden">Gold Earned: </p><p>{stats.goldEarned}</p>
       </div>
       </div>
     </div>

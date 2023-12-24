@@ -3,7 +3,8 @@ import React from 'react';
 const MatchList = ({ matches, onSelectMatch }) => {
   return (
     <div>
-      <h2>Last 10 Matches</h2>
+  
+      <img src="last10.png" alt="last10" width="300px" />
       <ul>
         {matches.map((match) => (
           <li key={match} onClick={() => onSelectMatch(match)}>
