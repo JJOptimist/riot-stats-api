@@ -44,6 +44,7 @@ function App() {
 
       const matchDetailsData = matchDetailsResponse.data;
       setSelectedMatch(matchDetailsData);
+      console.log(matchDetailsData);
 
       
       if (summoner) {
@@ -89,6 +90,9 @@ function App() {
       <div className='stat'><p className="golden">Deaths:</p><p>{stats.deaths}</p></div>
       <div className='stat'><p className="golden">Assists: </p><p>{stats.assists}</p></div>
       <div className='stat'><p className="golden">Gold Earned: </p><p>{stats.goldEarned}</p></div>
+      </div>
+      <div>
+        <code></code>
       </div>
       </div>
     </div>

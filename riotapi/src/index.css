@@ -10,7 +10,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: 'Open Sans', sans-serif;
+
   font-weight: 600;
 }
 
@@ -39,11 +39,23 @@
   padding: 6rem; 
   margin: 1rem;
   width: 50%;
+  font-family: 'Open Sans', sans-serif;
   
 }
 
 .singlematch {
   padding: 1rem;
+  margin-inline: 0.2rem;
+  border:  none;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  color: whitesmoke;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.singlematch:hover {
+  transform: scale(1.1);
 }
 
 .matches {
@@ -52,6 +64,10 @@
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: Consolas,"courier new";
+  color: crimson;
+  background-color: #f1f1f1;
+  padding: 2px;
+  font-size: 100%;
+  border-radius: 5px;
 }
