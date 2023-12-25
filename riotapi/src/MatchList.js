@@ -5,13 +5,13 @@ const MatchList = ({ matches, onSelectMatch }) => {
     <div>
   
       <img src="last10.png" alt="last10" width="300px" />
-      <ul>
+      <div className="matches">
         {matches.map((match) => (
-          <li key={match} onClick={() => onSelectMatch(match)}>
+          <div className="singlematch" key={match} onClick={() => onSelectMatch(match)}>
             {match}
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

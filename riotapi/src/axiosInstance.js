@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'https://eun1.api.riotgames.com/lol', 
+  baseURL: 'https://euw1.api.riotgames.com/lol', 
 });
 
 instance.interceptors.request.use((config) => {

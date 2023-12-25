@@ -5,6 +5,7 @@
   text-align: center;
   flex-direction: column;
   min-height: 100vh;
+
   background-image: url('bg.jpg');
   background-position: center;
   background-repeat: no-repeat;
@@ -17,6 +18,7 @@
   display: flex;
   align-items: center;
   font-size: 1.3rem;
+
 }
 
 .stat > p {
@@ -35,7 +37,18 @@
 .stats {
   background: rgba(0, 0, 0, 0.7);
   padding: 6rem; 
+  margin: 1rem;
+  width: 50%;
   
+}
+
+.singlematch {
+  padding: 1rem;
+}
+
+.matches {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 code {
