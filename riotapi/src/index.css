@@ -67,7 +67,6 @@ code {
   max-height: 200px;
   color: crimson;
   background-color: #f1f1f1;
-  padding: 2px;
   font-size: 100%;
   border-radius: 5px;
   overflow-y: auto;
@@ -76,9 +75,14 @@ code {
 pre {
   max-height: 300px;
   overflow-y: scroll;
+  background-color: #f1f1f1;
+  max-width: 500px;
 }
+
+
 
 
 .understats {
   display: flex;
+  justify-content: space-between;
 }
