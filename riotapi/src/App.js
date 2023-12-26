@@ -11,6 +11,7 @@ function App() {
   const [summoner, setSummoner] = useState(null);
   const [matches, setMatches] = useState([]);
   const [selectedMatch, setSelectedMatch] = useState(null);
+  const [participant, setParticipant] = useState(null);
 
   const [stats, setStats] = useState({
     kills: null,
@@ -48,10 +49,12 @@ function App() {
 
       
       if (summoner) {
- 
+        
         const participant = matchDetailsData.info.participants.find(
           (p) => p.puuid === summoner.puuid
         );
+
+        setParticipant(participant);
 
         if (participant) {
          
@@ -77,23 +80,29 @@ function App() {
 
   return (
     <div className='content'>
-      <div className='stats'>
-      <SummonerForm onSearch={searchSummoner} />
-      {summoner && <h1>{summoner.name}</h1>}
-      <MatchList matches={matches} onSelectMatch={selectMatch} />
-      {selectedMatch && <MatchDetails details={selectedMatch} />}
+        <div className='stats'>
+        <SummonerForm onSearch={searchSummoner} />
+        {summoner && <h1>{summoner.name}</h1>}
+        <MatchList matches={matches} onSelectMatch={selectMatch} />
+        {selectedMatch && <MatchDetails details={selectedMatch} />}
       
 
-      {/* Display stats */}
-      <div>
-      <div className='stat'><p className="golden">Kills:</p><p>{stats.kills}</p></div>
-      <div className='stat'><p className="golden">Deaths:</p><p>{stats.deaths}</p></div>
-      <div className='stat'><p className="golden">Assists: </p><p>{stats.assists}</p></div>
-      <div className='stat'><p className="golden">Gold Earned: </p><p>{stats.goldEarned}</p></div>
-      </div>
-      <div>
-        <code></code>
-      </div>
+        {/* Display stats */}
+        <div className="understats">
+        <div>
+          <div className='stat'><p className="golden">Kills:</p><p>{stats.kills}</p></div>
+          <div className='stat'><p className="golden">Deaths:</p><p>{stats.deaths}</p></div>
+          <div className='stat'><p className="golden">Assists: </p><p>{stats.assists}</p></div>
+          <div className='stat'><p className="golden">Gold: </p><p>{stats.goldEarned}</p></div>
+        </div>
+        <div className='json'>
+          <pre>
+            <code>
+              {participant && JSON.stringify(participant, null, 2)}
+            </code>
+          </pre>
+        </div>
+        </div>
       </div>
     </div>
   );

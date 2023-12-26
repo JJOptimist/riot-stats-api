@@ -64,10 +64,21 @@
 }
 
 code {
-  font-family: Consolas,"courier new";
+  max-height: 200px;
   color: crimson;
   background-color: #f1f1f1;
   padding: 2px;
   font-size: 100%;
   border-radius: 5px;
+  overflow-y: auto;
+}
+
+pre {
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+
+.understats {
+  display: flex;
 }

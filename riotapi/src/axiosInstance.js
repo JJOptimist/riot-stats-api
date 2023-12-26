@@ -6,7 +6,7 @@ const instance = axios.create({
 });
 
 instance.interceptors.request.use((config) => {
-  const API_KEY = 'RGAPI-4278be8f-4e24-4ea3-bc98-2528230da0f5'; 
+  const API_KEY = 'RGAPI-ae235f93-b430-454e-9037-3ab9074f1d0a'; 
   config.params = config.params || {};
   config.params['api_key'] = API_KEY;
   config.params['count'] = 10; 
